@@ -1,0 +1,4 @@
+doas vim /etc/X11/Xwrapper.config
+# Added `needs_root_rights = yes` ( file previously didn't exist ); this probably will be fixed in new nvidia driver version 
+doas chmod +s /usr/lib/Xorg.wrap
+# Make xorg run as root

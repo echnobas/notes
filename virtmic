@@ -1,0 +1,11 @@
+# https://stackoverflow.com/questions/61990828/how-to-redirect-an-audio-stream-to-a-virtual-pulseaudio-microphone-with-ffmpeg
+
+# https://askubuntu.com/questions/403416/how-to-listen-live-sounds-from-input-from-external-sound-card
+
+# Reduce mic echo
+pactl load-module module-echo-cancel
+# Virtual speakers and virtual mic
+pactl load-module module-null-sink sink_name="virtual_speaker" sink_properties=device.description="virtual_speaker"
+pactl load-module module-remap-source master="virtual_speaker.monitor" source_name="virtual_mic" source_properties=device.description="virtual_mic"
+
+
